@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <div th:insert="static/fragment :: headerFragment"></div>
+</head>
+<body>
+  <h1>Калькулятор</h1>
+  <form action="/main/">
+      <label>
+          <input name="x1" type="number" placeholder="x1">
+          <select name="m">
+              <option value="+" selected>+</option>
+              <option value="-">-</option>
+              <option value="*">*</option>
+              <option value="/">/</option>
+          </select>
+          <input name="x2" type="number" placeholder="x2"> <br/><br/>
+
+          <input type="submit" formmethod="get" value="GET">
+          <input type="submit" formmethod="post" value="POST">
+      </label>
+  </form>
+
+</body>
+<footer th:insert="static/fragment :: footerFragment"></footer>
+</html>
