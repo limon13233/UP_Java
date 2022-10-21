@@ -1,0 +1,21 @@
+<head xmlns:th="http://www.w3.org/1999/xhtml">
+    <meta charset="UTF-8">
+    <div th:fragment="headerFragment">
+        <header class="d-flex justify-content-center py-3">
+            <ul class="nav nav-pills">
+                <li style="margin-left: 20px"><form th:action="@{/logout}" method="post">
+                    <input class="nav-link active" type="submit" value="Sign Out"/>
+                </form></li>
+                <li class="nav-item" style="margin-left: 20px"><a href="/employee" class="nav-link active" aria-current="page">Сотрудники</a></li>
+                <li class="nav-item" style="margin-left: 20px"><a href="/" class="nav-link active" aria-current="page">Калькулятор</a></li>
+                <li class="nav-item" style="margin-left: 20px"><a href="/employee/dop_infoADD" class="nav-link active" aria-current="page">Добавить Доп. Информацию</a></li>
+                <li class="nav-item" style="margin-left: 20px"><a href="/employee/PostADD" class="nav-link active" aria-current="page">Добавить должность</a></li>
+                <li class="nav-item" style="margin-left: 20px"><a href="/employee/OfficeADD" class="nav-link active" aria-current="page">Добавить офис</a></li>
+                <li class="nav-item" style="margin-left: 20px"><a href="/employee/Office_employeeADD" class="nav-link active" aria-current="page">Добавить сотрудника в офис</a></li>
+            </ul>
+        </header>
+    </div>
+</head>
+<footer style="background:LightGrey;text-align:center" th:fragment="footerFragment">
+    <a style="">Все права защещены мной</a>
+</footer>
