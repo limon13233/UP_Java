@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:margin="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="Редактирование + ' ' + ${employee.surname} + ${employee.name} + ${employee.middleName}"></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <div class="container">
+        <header class="d-flex justify-content-center py-3">
+            <ul class="nav nav-pills">
+                <li class="nav-item" ><a href="/employee" class="nav-link active" aria-current="page">Сотрудники</a></li>
+                <li class="nav-item" style="margin-left: 20px"><a href="/" class="nav-link active" aria-current="page">Калькулятор</a></li>
+            </ul>
+        </header>
+    </div>
+</head>
+<body>
+<div th:each="el: ${employee}" >
+    <form method="post">
+        <label>
+            <input name="surname" type="text" placeholder="Фамилия" th:value="${employee.surname}" style="margin:10px" > <br>
+            <input name="name" type="text" placeholder="Имя" th:value="${employee.name}"  style="margin:10px"> <br>
+            <input name="middleName" type="text" placeholder="Отчество" th:value="${employee.middleName}" style="margin:10px"> <br>
+            <input name="passport" type="number" min="1000000000" max="9999999999" placeholder="Паспорт" th:value="${employee.passport}" style="margin:10px"> <br>
+            <input name="birthday" type="text" placeholder="гггг-мм-дд" th:value="${employee.birthday.toString().substring(0,10)}" maxlength="10" style="margin:10px"> <br><br>
+
+            <input type="submit" value="Подтвердить" class="btn btn-info"  style="margin:10px">
+        </label>
+    </form>
+    <a class="btn" style="background:lightblue; margin:10px" th:href="'/employee/details/' + ${el.getId()}" >Back</a>
+</div>
+</body>
+</html>
